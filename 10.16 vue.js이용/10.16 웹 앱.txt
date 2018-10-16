@@ -1,0 +1,333 @@
+최근에는 단순 구성
+역활분담 및 공유부분
+복합기능 보다는 단일기능같은 부분
+
+
+https://nodejs.org/ko/
+
+다운로도 - 현재버전 - 설치
+
+- cmd
+- node --version
+
+//
+vue CLI(command line interface)
+aws CLI -> python (파이썬으로 만들어짐)
+//
+
+// vue cli 설치
+1. npm install -g @vue/cli
+
+- cd\
+
+
+//앱 생성
+2. vue create myapp (애플리케이션 만드는 과정)
+
+- Manually select features (엔터)
+
+- Bable
+- Router
+- Linter / Formatter
+	(스페이스로 체크)
+	엔터
+
+	y/n나오면 no하고 나머지는 전부 엔터
+	후에 2번째 y/n나오면 no체크
+
+//
+정상적으로는 파란글씨 2개 나와야한다.
+
+(안되면 다시 오버라이트해서 다시하기.)
+에러 나면 제어판에서 지우고 다시.
+//
+
+- cd myapp
+- npm run serve
+
+
+- 크롬주소에 입력
+- http://localhost:8080
+	(올라와있다 vue.js app)
+
+
+
+- 새 cmd창 에서 실행.
+- npm config set registry https://registry.npmjs.org/
+
+
+
+- 비주얼 코드 - 파일 - 폴더열기 - C: - myapp
+폴더 선택
+
+
+아이콘 = 확장 Material Icon Theme 선택 - 설치
+- 파일 
+- 기본설정 
+- 파일아이콘테마 
+- Material Icon Theme 선택
+
+
+- 퍼블릭
+ 별모양 - 즐겨찾기에서 보이는 아이콘
+ 인덱스 - 여기서 코드작성하는거 아님.
+
+
+- 확장
+- Vue 2 Snippets - 설치
+- 활성화 할려면 다시 로드
+
+- src
+- components = helloworld.vue 에서 보면 힌트가 색깔변해야 된다.
+
+
+//
+main.js 시작지점
+
+대부분 웹기반이 이렇게 되어있다.
+
+뷰를 임포트
+app.vue = 화면 =single file component
+
+자바스크립트에서는 확장자 않붙였는데, 그 외에는 붙여넣은다.
+
+
+$mount('#app')	=마운트한다.
+
+
+퍼블릭 - 인덱스 하단
+ <div id="app"></div>
+
+(여기에 마운트 한다는 애기다.)
+
+
+- views - App.vue
+
+템플릿 프로젝트에 이용하면한다.
+
+ <router-link to="/">Home</router-link> |
+<router-link to="/about">About</router-link>
+<!--컴퍼넌트 보여준다 -->
+
+
+
+
+- views - router.js
+
+
+
+import Home from './views/Home.vue'
+(싱글파일을 임포트한다 홈에다가)
+
+ component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+
+원래 () 안에 펑션 들어가있어야한다.
+
+//
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+- 바탕화면 - user .vuerc = 메모장으로 열기
+- : false 로 바꾸기
+(에러 뜨는거 바꿔보기)
+
+
+- views - 우클릭 - 새파일
+
+Todo.vue 만들기
+
+<h1>Todo</h1>
+
+
+
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+app.vue 에서 복사
+      <router-link to="/">Home</router-link> |
+      <router-link to="/about">About</router-link> |
+      <router-link to="/todo">todo</router-link>
+
+
+
+
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+router.js 에서 컴포트 아래에다가 추가하기
+,
+    {
+      path: '/todo',
+      name: 'todo',
+      component: () => import('./views/Todo.vue')
+    }
+
+
+//
+저장하고 다시한번 화면을 확인하면  상단에 todo 추가된것을 확인 가능하다.
+cmd 에서도 
+//
+
+
+
+
+- 인덱스 부분에다가 붙여넣기
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+
+- Todo.vue 에서 만든 <h1>부분 만든거 지우기
+밴드에서 강사님이 올려주신 코드 복사해서 붙여넣기
+
+
+
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+- cmd 기존 있던거
+
+(보면 빨간 글씨 뜨면서 에러 뜨는데)
+- 컨트롤 + c 눌러서 종료
+- y
+
+- npm install jquery popper.js bootstrap
+	(3가지 설치한다 모드 = j쿼리, 팝.js, 부트스트랩)
+
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+- main.js 에서 추가하기
+
+- import 'bootstrap';
+- import 'bootstrap/dist/css/bootstrap.css'
+
+
+
+- npm run serve
+다시 시작해서 확인해보기(컴파일한다)
+
+크롬에서 todo 눌러보면은 전에 작성했던게 나온다.
+
+(설정 바뀔떄마다 서버 다운? 내려가니까 다시 시작해주기)
+(개발 과정 중...)
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+배포모드로 바꿔서
+
+
+cmd
+- 서버 나오기 컨트롤 + c
+- npm run build
+
+
+
+//
+비주얼 코드 보면 상단에 dist 디렉터리가 생성되어있다.
+확인해본다
+//
+
+- dist - css - chunk -vendors 선택
+- 아까 올린 부트스트랩? 부분이 보인다.
+
+
+
+
+
+
+ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+
+s3로하면 한글 꺠지고 해서 그냥 올리는 방법
+
+
+아마존 콘솔 로그인
+
+s3로 가서 버킷 새로 만들기.
+
+속성
+- 정적 웹 사이트 호스팅
+- index.html
+
+저장
+
+
+개요
+- 업로드
+- myapp - dist
+- 폴더 및 파일 전부 드래그 해서 s3에 옮기기
+- 다음 - 권한부여 - 업로드
+( 폴더3개 파일1개 실행파일1개  올라온다)
+
+SPA(single page application)싱글 페이지 애플
+해본거다.
+
+
+//
+
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

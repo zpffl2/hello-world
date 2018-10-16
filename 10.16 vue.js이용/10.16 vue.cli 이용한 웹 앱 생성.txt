@@ -1,0 +1,46 @@
+=============== vue.cli 를 이용하여 웹 앱 생성
+
+1. Node.js install
+
+
+// vue cli 설치
+2. npm install -g @vue/cli
+
+
+// 앱 생성
+3. vue create myapp
+ Router 선택
+
+
+// 디렉토리 이동
+4. cd myapp
+
+
+// 로컬 모드 실행
+5. npm run serve
+
+
+// 매터리얼 css import
+6. public/index.html에 include
+
+
+// jquery, bootstrap import
+7. npm install jquery popper.js bootstrap
+main.js에 코드 추가
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.css'
+
+
+// Todo.vue 생성
+8. views/Todo.vue 생성
+
+
+// 라우터 수정 
+9. router.js 수정, /todo 경로에 컴퍼넌트 바인딩
+
+
+// 배포 모드로 빌드
+10. npm run build
+
+
+11. s3에 배포
